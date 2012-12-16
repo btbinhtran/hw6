@@ -10,7 +10,8 @@ html
     script
       var server = io.connect('http://#{ip}:#{port}');
       
-      server.on('connection', function(data) {
+      server.on('connect', function(data) {
+        console.log("client connected motherfuka");
         prompt("What is your name?");
       });
 
