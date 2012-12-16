@@ -2,10 +2,11 @@
 /*
  * GET home page.
  */
-routes = function(app) {
+var routes = function(app) {
   app.get('/', function(req, res) {
     res.render('index', {
-      title: 'Express'
+      title: 'Express',
+      port: 8080
     });
   });
 };

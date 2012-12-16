@@ -15,6 +15,7 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.use(require('connect-assets')());
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -37,7 +38,7 @@ io.sockets.on('connection', function(client) {
   console.log("what is client");
 
   client.on('item:submit', function(data) {
-    items.push
+    //items.push
     console.log(data);
   });
 });

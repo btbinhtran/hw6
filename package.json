@@ -9,6 +9,7 @@
     "express": "3.0.4",
     "jade": "*",
     "socket.io": "~0.9.13",
-    "connect-assets": "~2.3.3"
+    "connect-assets": "~2.3.3",
+    "coffee-script": "~1.4.0"
   }
 }
