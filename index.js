@@ -13,6 +13,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
+  app.set('ip', process.env.IP || 'localhost');
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(require('connect-assets')());

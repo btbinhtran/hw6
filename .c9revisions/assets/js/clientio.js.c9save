@@ -2,3 +2,4 @@
 {"contributors":["btbinhtran@gmail.com"],"silentsave":false,"ts":1355623654633,"patch":[[{"diffs":[[1,"var server = io.connect('http://localhost:3000');\nserver.on('connect', function(data) {\n    console.log(\"work please\");\n});"]],"start1":0,"start2":0,"length1":0,"length2":123}]],"length":123,"saved":false}
 {"ts":1355623670869,"patch":[[{"diffs":[[0,"og(\""],[-1,"work please"],[1,"Just connected dog!"],[0,"\");\n"]],"start1":101,"start2":101,"length1":19,"length2":27}]],"length":131,"saved":false}
 {"ts":1355623701206,"patch":[[{"diffs":[[-1,"var server = io.connect('http://localhost:3000');\n"],[0,"serv"]],"start1":0,"start2":0,"length1":54,"length2":4}]],"length":81,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1355627853063,"patch":[[{"diffs":[[-1,"server.on('connect', function(data) {\n    console.log(\"Just connected dog!\");\n});"]],"start1":0,"start2":0,"length1":81,"length2":0}]],"length":0,"saved":false}
