@@ -4,7 +4,6 @@
  */
 var routes = function(app) {
   app.get('/', function(req, res) {
-    console.log(app);
     
     res.render('index', {
       title: 'Express',
