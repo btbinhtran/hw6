@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    body.home-page
+        .homepage-container
+
+            .login-box
+                .inner-padding
+                    img.logo(src='img/logo.png', width='217', height='239', alt='Logo')
+                    h3 Collaborate on multiple grocery lists
+                    p
+                        a#twitbutt.sb.sb-small.sb-twitter(href="/auth/twitter")
+                            i
+                            | Sign in with Twitter
+                        em or
+                        a#fbbutt.sb.sb-small.sb-facebook(href="/auth/facebook")
+                            i
+                            | Sign in with facebook
+
+
+        footer
+            | Grocery List is a project for
+            a(href="http://cs.sjsu.edu/~martin/2012fall/174/htdocs/hw6.html") SJSU's web class.
+            | Project is derived from
+            a(href='https://github.com/gravityonmars/Balloons.IO', target="_blank") Balloons.IO
+
+// JavaScript at the bottom for fast page loading
+

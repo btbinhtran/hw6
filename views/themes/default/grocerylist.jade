@@ -1,0 +1,72 @@
+extends layout
+
+block content
+	.color-line
+	.wrap
+		header
+			include status_dropdown
+			include grocerylists_dropdown
+			a.button-circle.invite.fancybox(href='#invite', style="display:none;")
+				strong
+					span
+						i
+			#invite.modal.modal-invite(style='display: none')
+				h2 Invite people to join the grocery list
+					.modal-content
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					.tweet-user
+						input.(type='text', name='', value='')
+					.tweet-user
+						input.(type='text', name='', value='')
+					.tweet-user
+						input.error(type='text', name='', value='')
+					.tweet-user
+						input.(type='text', name='', value='')
+					.tweet-user
+						input.(type='text', name='', value='')
+					.tweet-user
+						input.(type='text', name='', value='')
+				// .modal-content 
+					.modal-footer
+						a.button.invite-people(href='#') Invite these people
+				// .modal-footers 
+					// #invite 
+			a.button-circle.lock(href='#', style="display:none;")
+				strong
+					span
+						i
+		sidebar
+			include groceryitem_list
+			include files_list
+			a(href="https://github.com/gravityonmars/Balloons.IO", target="_blank", class="sidebar-open-source") get the code from github
+
+		.content(role='main')
+			.groceryitem
+				// groceryitem-content
+				.history
+					//historical submits
+				.current
+					//current submits
+			// .groceryitem
+
+			.line-groceryitem
+			.line-groceryitem.second
+
+			.groceryitem-input
+				input.text(type='text', name='', placeholder="Enter a grocery item", value='')
+				// .groceryitem-input
+
+	// .wrap
+
+	span#grocerylist_name(style="display:none")= grocerylist.name
+	span#username(style="display:none")= user.nickname
+	span#provider(style="display:none")= user.provider
+
+	include templates/groceryitem_tmpl
+
+	script(defer, src="/js/libs/fancy-box/jquery.fancybox.pack.js")
+	script(defer, src="/js/plugins.js")
+	script(defer, src="/js/libs/ICanHaz.min.js")
+	script(src="/socket.io/socket.io.js")
+
+	script(defer, src="/js/script.js")              

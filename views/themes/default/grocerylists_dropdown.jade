@@ -1,0 +1,18 @@
+.dropdown.dropdown-grocerylist
+	i
+	a.selected(href='#')= grocerylist.name
+	.dropdown-options
+		.triangle
+		form(method="POST",action="/create")
+			a.option.create-grocerylist(href='#') Create a grocery list
+			input.text(type='text', name='grocerylist_name', value='', placeholder='Name of your grocery list', style='display: none')
+		.list
+			a.option.current(href='#')= grocerylist.name
+			each r,index in grocerylists
+				-if(r.key != grocerylist.key) {
+					a.option(href="/"+r.key, title="#{r.name}")
+						| #{r.name.substr(0,15)}
+						span.dropdown-users-online
+							| #{r.online}
+				-}
+// .dropdown-grocerylist

@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	body.home-page
+		.select-grocerylist-container.box-container.clearfix
+			.inner-padding.clearfix
+				img.logo(src='/img/logo.png', width='217', height='239', alt='Logo')
+				.clear
+				.grocerylists-block
+					h4 Select a grocerylist:
+					.grocerylist-list.hide-inactive
+						each grocerylist,index in grocerylists
+							- var grocerylistClass = grocerylist.online > 0 ? "grocerylist-active" : "grocerylist-inactive";
+							- var word = grocerylist.online == 1 ? "user" : "users";
+							a(href='/' + grocerylist.key, class="#{grocerylistClass}", title="#{grocerylist.name}")
+								| #{grocerylist.name.substr(0,20)}
+								span.users-online
+									| #{grocerylist.online} #{word}
+					.inactive
+						input(type='checkbox', id="hide-inactive", checked) 
+						label(for="hide-inactive") Hide inactive
+				.create-grocerylist-block
+					h4
+						em or
+						| Create a new one:
+					form(method="POST",action="/create")
+						p
+							input.text-grey(type='text', name='grocerylist_name', value='', placeholder='Name of your grocerylist')
+						input.button(type='submit', value='Create now')
+
+
+
+		footer
+			| Balloons.IO is an 
+			a(href='https://github.com/gravityonmars/Balloons.IO', target="_blank") Open Source project 
+			| developed by 
+			a(href='http://twitter.com/gravityonmars', target="_blank") Gravity On Mars.
+		script
+			$('#hide-inactive').click(function(ev) {
+				$('.grocerylist-list').toggleClass('hide-inactive');
+			});
